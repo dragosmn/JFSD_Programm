@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+
+        h1{
+            width:150px;
+            height: 150px;
+            position: absolute;
+            background-color: green;
+            animation-name: first;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes first {
+            0% {background-color: green; top: 0px; left: 0px;}
+            25% {background-color: yellow; top: 250px; left: 0px;}
+            50% {background-color: red; top: 250px; left: 250px;}
+            75% {background-color: blue; top: 0px; left: 250px;}
+            100% {background-color: green; top: 0px; left: 0px;}
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome</h1>
+</body>
+</html>

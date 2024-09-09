@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Methods</title>
+</head>
+<body>
+
+    <script>
+
+        let name='Dragos Munteans';
+
+        console.log(name);
+
+        //Length
+
+        console.log('Length: ' + name.length);
+
+        let len=name.length;
+        console.log(`Length is ${len}`);
+
+        //Slice
+
+        let slice=name.slice(0,6);
+        console.log(`Slice is ${slice}`);
+
+        let slice1=name.slice(7);
+        console.log(`Slice is ${slice1}`);
+
+        let slice2=name.slice(-8);
+        console.log(`Slice is ${slice2}`);
+
+        //Substring
+        let name1='Hello World';
+
+        let sub1=name1.substring(0,5);
+        let sli1=name1.slice(0,5);
+
+        console.log("Substring Between 0-5 :"+sub1);
+        console.log("Slice Between 0-5 :"+sli1);
+
+        let msg="Good Evening Everyone";
+
+        console.log("Old String:",msg);
+
+        let sub2=msg.substring(5,16);
+
+        console.log("Substring between 5-16: "+sub2);
+
+        //Replace a string
+
+        let newMsg=msg.replace("Evening", "Morning");
+        console.log("New String: " + newMsg);
+
+        let data="Hello! User , Your details mentioned Below, User:1";
+        console.log("Old String: " + data);
+
+        let newData=data.replaceAll('User', 'userID');
+        console.log("New String: " + newData);
+
+        //Check availability in String
+
+        let word="find me on sky VIBGYOR";
+        console.log(word);
+
+        console.log("String includes VIBGYOR: " + word.includes('VIBGYOR'));
+
+        //Find index of occurence
+
+        let str_train="Running in a train on the track";
+        console.log(str_train);
+
+        let index=str_train.indexOf('train');
+        console.log(index);
+
+        //Check position of character
+
+        var my_str="Hello World";
+        console.log(my_str);
+        console.log("Char at index 2:",my_str.charAt(6));
+
+        //08 ends with
+        console.log("Ends with Word World: "+my_str.endsWith("World"));
+
+        //09 uppercase
+        console.log("UPPERCASE: "+my_str.toUpperCase());
+
+        //10 uppercase
+        console.log("lowercase: "+my_str.toLowerCase());
+
+
+        //  slice                    | substring
+        // we can give -ve indices   |  we can't give -ve indices
+
+
+        //11.split and join
+
+        let originalString="Hello World";
+        let modifiedString=originalString.split(' ').join('-');
+
+        console.log(modifiedString);
+
+    </script>
+    
+</body>
+</html>

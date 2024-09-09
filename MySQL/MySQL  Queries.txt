@@ -1,0 +1,194 @@
+1. CREATE USER
+--------------------------------------------------------
+> create user admin@localhsot indentified by "admin@123";
+
+2. TO SEE CREATED USER
+---------------------------------------------------------
+> select user, host from mysql.user;
+
+3. CRAETE NEW DATABASE
+---------------------------------------------------------
+> create database <name of database>;
+
+4. SHOW THE DATABASE 
+---------------------------------------------------------
+> show databases;
+
+5. CREATE TABLE
+----------------------------------------------------------
+> create table students(id INT PRIMARY KEY,fname VARCHAR(20),lname VARCHAR(20), email VARCHAR(20), password VARCHAR(30));
+
+6. USE DATABASE
+----------------------------------------------------------
+> use <name ofyour database>
+
+7. TO CHECK TABELS IN DATABASE
+----------------------------------------------------------
+> show tables;
+
+8. TO CHECK THE DESCRIPTION OF TABLE
+----------------------------------------------------------
+> describe table <name of your database>
+
+9. INSERT RECORDS
+---------------------------------------------------------
+> insert into students (id,fname,lname,email,password) values (1,'Soni','Nikunj','nikunj@gmail.com','Nikunj@123');
+> insert into students (id,fname,lname,email,password) values (2,'Soni','Sonam','sonam@gmail.com','Sonam@123');
+> insert into students (id,fname,lname) values (3,'Alex','Jhon');
+
+10. FETCH RECORDS
+-----------------------------------------------------------------
+> select * from table_name;
+eg: select * from students
+
+
+11. CREATE ANOTHER TABLE
+-----------------------------------------------------------------
+> create table product (pid INT PRIMARY KEY,name VARCHAR(20), brand VARCHAR(20), price DOUBLE,color VARCHAR(20),rating FLOAT);
+
+>show tables;
+
+>describe products;
+
+
+12. CREATE ANOTHER TABLE
+------------------------------------------------------------------
+> create table user(uid INT PRIMARY KEY, name VARCHAR(20),phone VARCHAR(20),email VARCHAR(256));
+
+
+13. ADD 2 MORE COLUMNS TO THE TABLE
+-------------------------------------------------------------------
+> alter table user add age INT,add weight FLOAT;
+
+
+14. CREATE ANOTHER TABLE
+-------------------------------------------------------------------
+> create table customer(uid INT PRIMARY KEY, name VARCHAR(20),phone VARCHAR(20),email VARCHAR(256));
+
+
+15. INSERT THE RECORD
+-------------------------------------------------------------------
+> insert into customer (uid,name,phone,email) values(1,'alex','9876543210','alex@gmail.com');
+> insert into customer (uid,name,phone,email) values(2,'jhon','9876543201','jhon@gmail.com');
+> insert into user (uid,name,phone,email) values(1,'NIKUNJ','7685432109','nikunj@gmail.com');
+
+16. FETCH THE RECORD
+-------------------------------------------------------------------
+> SELECT * FROM customer;
+
+17.INSERT MULTIPLE VALUES IN A TABLE
+-------------------------------------------------------------------
+> insert into user (uid,name,phone,email) values
+(2,'NIKUNJ','7685432109','nikunj@gmail.com'),
+(3,'jhon','1234567890','jhon@gmail.com'),
+(4,'peter','9871234560','peter@gmail.com'),
+(5,'andreas','9898989811','andreas@gmail.com'),
+(6,'samiha','9999888811','samiha@gmail.com');
+
+18. TRUNCATE TABLE
+-------------------------------------------------------------------
+> truncate table customer;
+
+19. DROP TABLE
+-------------------------------------------------------------------
+> drop table customer;
+
+20. UPDATE RECORD
+-------------------------------------------------------------------
+> select * from user;
+> update user set name='amin' where uid=2;
+> update user set phone='555566622' where uid=2;
+
+21. DELETE RECORD
+-------------------------------------------------------------------
+> delete from user where uid=1;
+
+21. DROP THE DATABASE
+-------------------------------------------------------------------
+> drop database vodafone;
+
+
+22. WHERE /SELECT CLAUSE
+--------------------------------------------------------------------
+> create table user(uid INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(20),phone VARCHAR(20),email VARCHAR(256),age INT default 26,City VARCHAR(256));
+
+> insert into user (name,phone,email,age,city) values
+('sam','+91 9876543210','sam@gmail.com',23,'Mumbai'),
+('siri','+91 9988776655','siri@gmail.com',28,'Calcutta'),
+('jhon','+91 8877665544','jhon@gmail.com',32,'indore'),
+('anil','+91 7766554433','anil@gmail.com',35,'Mumbai'),
+('jacob','+91 9977553311','jacob@gmail.com',40,'Mumbai'),
+('shakti','+91 6655443322','shakti@gmail.com',37,'Mumbai');
+
+> select * from user;
+> select name from user;
+> select phone from user;
+> select email from user;
+> select city from user;
+> select name,phone from user;
+> select name,phone from user where city='Mumbai';
+> select name,phone from user where city='Mumbai' and age>30;
+> select name,phone from user where city='Mumbai' and age<30;
+
+23. SORTING DATA
+-----------------------------------------------------------------------
+> select * from user order by name;  (ascending)
+> select * from user order by name DESC; 
+> select * from user order by age;
+> select * from user order by name DESC;  
+> select * from user order by age,name DESC; 
+> select * from user order by age,name ASC;
+
+
+24. GROUP BY  and AGGREGATE CLUASE
+------------------------------------------------------------------------
+SYNTAX: count,min.max,sum,avg,
+
+> select count(uid),city from user group by city;
+
+
+AGGREGATE:
+----------
+> select count(*) as Record from user;
+> select min(age) from user;
+> select min(age)Younger ,max(age) Elder from user;
+
+Last Inserted ID:
+-----------------
+> select max(uid) from user;
+
+
+SUM OF AGE:
+------------------
+> select sum(age) from user;
+> select sum(age) from user where city='Mumbai';
+
+
+AVERAGE:
+-----------------
+> select avg(age) from user;
+> select avg(age) from user where city='Mumbai';
+> select avg(age) from user group by city;
+
+LIMIT:
+-----------------
+
+> select * from user order by name DESC limit 3;
+
+skip first 3 records and take next 3 records;
+
+> select * from user order by name DESC limit 3 OFFSET 3;
+
+
+DISTINCT:
+---------------
+> select DISTINCT city from user;
+
+
+RANGE:
+------------------
+> select * from user where age between 25 and 30;
+
+(another way)
+> select * from user where age in(25,30);
+> select * from user where age >=25 and age<=30;

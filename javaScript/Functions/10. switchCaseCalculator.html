@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Case Calculator</title>
+</head>
+<body>
+
+    <h1>Switch Case Calculator</h1>
+
+
+    <script>
+        var num1=prompt("Enter 1 st number");
+        var num2=prompt("Enter 2 nd number");
+        var operator=prompt('Enter operator: +,-,*,/,>,<,=');
+
+        var x=parseInt(num1);
+        var y=parseInt(num2);
+
+        document.write('Number 1 is: ' + num1 + '<br>');
+        document.write('Number 2 is: ' + num2 + '<br>');
+        document.write('Operator is: ' + operator + '<br>');
+
+      switch (operator) {
+        case '+':   
+                result=x+y;
+                document.write("Result is: " + result);
+            break;
+        case '-':   
+                result=x-y;
+                document.write("Result is: " + result);
+        break;
+        case '*':   
+                result=x*y;
+                document.write("Result is: " + result);
+        break;
+        case '/':   
+                result=x/y;
+                document.write("Result is: " + result);
+        break;
+        case '>':   
+                result=x>y;
+                document.write("Result is: " + result);
+        break;
+        case '<':   
+                result=x<y;
+                document.write("Result is: " + result);
+        break;
+      
+        default: document.write("Please Enter Valid Parameters");
+            break;
+      }
+    </script>
+    
+</body>
+</html>

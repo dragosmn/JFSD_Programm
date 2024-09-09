@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    
+    <h1>JavaScript Classes</h1>
+
+    <p>JavaScript classes uses the keyword class to create a class</p>
+
+    <p>a classes always has a constructor</p>
+
+    <p>Syntax: class Class_Name{ constructor( ){ }}</p>
+
+    <script>
+        
+        class Student{
+            constructor(id,name){
+                this.id=id;
+                this.name=name;
+            }
+
+            display(){
+                console.log('ID: ' + this.id);
+                console.log('Name: ' + this.name);
+            }
+        }
+
+        //creating objects of class Student
+
+        let s1=new Student(1,'Alex');
+        let s2=new Student(2,'Dragos');
+        let s3=new Student(3,'Ionel');
+
+        //calling a class methode
+        s1.display();
+        s2.display();
+        s3.display();
+
+        //------------------------------------------------
+
+        class Car{
+            constructor(name,year){
+                this.name=name;
+                this.year=year;
+            }
+
+            age(){
+                const date=new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+
+        let myCar= new Car('Dacia', 2008);
+        console.log('Age of my car: ' + myCar.age());
+
+        let yourCar= new Car('Lambo', 2022);
+        console.log('Age of your car: ' + yourCar.age());
+
+    </script>
+
+</body>
+</html>

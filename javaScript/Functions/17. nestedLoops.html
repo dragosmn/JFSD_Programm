@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Loops</title>
+</head>
+<body>
+
+    <script>
+
+        //nested loop means Loop Within The Loop
+
+        for(let i=1;i<=5;i++){
+
+                for(let j=1;j<=5;j++){
+
+                    document.write("Nested ");
+
+                }
+
+            document.write("<br>");
+
+        }
+
+
+        document.write("Simple Nested Loop<br>")
+        for(let row=1;row<=7;row++){
+                for(let col=0;col<=9;col++){
+
+                    document.write("* ");
+                }
+            document.write("<br>");
+        }
+
+        //create Right Angle Shape using nested loop??
+
+        document.write("Right Angle Shape <br>");
+        for(let row=1;row<=10;row++){
+
+            for(let col=1;col<=row;col++){
+                document.write("* ");
+            }
+            document.write("<br>");
+        }
+
+        //create Inverted Right Angle Shape using nested loop??
+
+        document.write('Inverted Right angle Shape<br>')
+
+        for(let row=10; row>=1; row--){
+            for(let col=1; col<=row; col++){
+                document.write('* ');
+            }
+            document.write('<br>');
+        }
+
+    </script>
+    
+</body>
+</html>
